@@ -2,6 +2,7 @@
 
 import React, { Component, type ReactElement } from 'react';
 import { View, Text, ScrollView, StyleSheet, Animated } from 'react-native';
+import HTML from 'react-native-fence-html';
 
 import CarouselMiniHeader from './CarouselMiniHeader';
 
@@ -107,7 +108,11 @@ class CarouselCard extends Component {
       children,
       showMiniHeader,
     } = this.props;
-
+    const stylesimg = {
+        h1: { backgroundColor: '#FF0000' },
+        h2: { fontFamily: 'Arial' },
+    img: { resizeMode: 'cover' }
+    }
     const carouselTitle = title ? (
       <Text style={[styles.title, titleStyle]}>
         {title}
@@ -115,9 +120,9 @@ class CarouselCard extends Component {
     ) : null;
 
     const carouselDescription = description ? (
-      <Text style={[styles.description, descriptionStyle]}>
-        {description}
-      </Text>
+      <HTML style={[styles.description, descriptionStyle]}
+        html={description}  htmlStyles={stylesimg}
+      />
     ) : null;
 
     const carouselMiniHeader = (title && showMiniHeader) ? (
