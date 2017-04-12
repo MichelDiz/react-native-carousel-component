@@ -2,10 +2,11 @@
 
 import React from 'react';
 import RootSiblings from 'react-native-root-siblings';
+import HTML from 'react-native-fence-html';
 
 import CarouselComponent from './CarouselComponent';
 
-const DESTROY_TIMEOUT: number = 500;
+const DESTRAY_TIMEOUT: number = 500;
 const LOCK_TIMEOUT: number = 500;
 
 class CarouselManager {
@@ -77,7 +78,7 @@ class CarouselManager {
         if (carousel) {
           carousel.destroy();
         }
-      }, DESTROY_TIMEOUT);
+      }, DESTRAY_TIMEOUT);
     });
   }
 
