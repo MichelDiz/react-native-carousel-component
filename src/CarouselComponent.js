@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'absolute',
     width: WIDTH,
-    height: HEIGHT,
+    height: (95 / 100) * HEIGHT,
   },
   navigatorForNoChildren: {
     backgroundColor: 'transparent',
@@ -159,7 +159,8 @@ class CarouselComponent extends Component {
     if (!children) {
       containerStyleForNoChildren = styles.containerForNoChildren;
       navigatorForNoChildren = styles.navigatorForNoChildren;
-      animatedOverlay = (
+
+      animatedOverlay = children ? null : (
         <AnimatedOverlay
           overlayShow={this.state.show}
           opacity={1}
